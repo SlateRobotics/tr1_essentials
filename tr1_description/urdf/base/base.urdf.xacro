@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tr1_description)/urdf/base/base.gazebo.xacro" />
+	<xacro:include filename="$(find tr1_description)/urdf/base/base.transmission.xacro" />
+
+	<!-- roller macros -->
+	<xacro:macro name="wheel_rollers" params="i total parent radius">
+		<xacro:property name="wheel_roller_angle" value="${i / total * pi * 2}" />
+		<xacro:property name="wheel_roller_rpy" value="0 ${(pi / 2) + wheel_roller_angle} 0" />
+		<xacro:property name="wheel_roller_xyz" value="${radius * sin(wheel_roller_angle)} 0 ${radius * cos(wheel_roller_angle)}" />
+
+		<joint name="${parent}_roller_${i + 1}_joint" type="continuous">
+			<parent link="${parent}_link"/>
+			<child link="${parent}_roller_${i + 1}_link"/>
+		  <axis xyz="0 0 1"/>
+			<origin rpy="${wheel_roller_rpy}" xyz="${wheel_roller_xyz}"/>
+			<xacro:insert_block name="origin" />
+    	<dynamics damping="0.1" friction="0.1"/>
+		</joint>
+		<link name="${parent}_roller_${i + 1}_link">
+			<collision>
+				<geometry>
+		      <cylinder length="0.02" radius="0.005" />
+				</geometry>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+			</collision>
+			<inertial>
+				<mass value="0.001"/>
+				<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+			</inertial>
+			<visual>
+				<geometry>
+		      <cylinder length="0.02" radius="0.005" />
+				</geometry>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+			</visual>
+		</link>
+		
+		<xacro:if value="${total - i - 1}">
+			<xacro:wheel_rollers i="${i + 1}" total="${total}" parent="${parent}" radius="${radius}" />
+		</xacro:if>
+	
+	</xacro:macro>
+
+	<!-- wheel macros -->
+  <xacro:macro name="tr1_wheel" params="name *origin">
+		<joint name="Joint${name}" type="continuous">
+			<parent link="base_link"/>
+			<child link="${name}_link"/>
+		  <axis xyz="0 1 0"/>
+			<xacro:insert_block name="origin" />
+    	<dynamics damping="0.1" friction="0.1"/>
+		</joint>
+		<link name="${name}_link">
+			<!--<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="1.5708 0 0" />
+			</collision>-->
+			<inertial>
+				<mass value="1.0"/>
+				<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+			</inertial>
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="1.5708 0 0" />
+			</visual>
+		</link>
+		<xacro:wheel_rollers i="0" total="12" parent="${name}" radius="0.068" />
+	</xacro:macro>
+
+	<!-- resulting links and joints -->
+	<link name="base_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+			<origin rpy="0 0 3.141592" />
+		</visual>
+	</link>
+
+	<joint name="JointTorsoExtension" type="prismatic">
+		<parent link="base_link"/>
+		<child link="body_link"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1000.0" lower="0" upper="0.150" velocity="0.0001"/>
+		<origin xyz="0 0 0.707"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<xacro:tr1_wheel name="BaseWheelFL">
+		<origin rpy="0 0 0.785398" xyz="-0.293310 0.417810 -0.0725"/>
+	</xacro:tr1_wheel>
+
+	<xacro:tr1_wheel name="BaseWheelFR">
+		<origin rpy="0 0 -0.785398" xyz="0.293310 0.417810 -0.0725"/>
+	</xacro:tr1_wheel>
+
+	<xacro:tr1_wheel name="BaseWheelBL">
+		<origin rpy="0 0 0.785398" xyz="0.293310 -0.168810 -0.0725"/>
+	</xacro:tr1_wheel>
+
+	<xacro:tr1_wheel name="BaseWheelBR">
+		<origin rpy="0 0 -0.785398" xyz="-0.293310 -0.168810 -0.0725"/>
+	</xacro:tr1_wheel>
+
+</robot>
+
+

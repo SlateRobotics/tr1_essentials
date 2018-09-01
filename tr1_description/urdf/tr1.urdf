@@ -1,0 +1,1348 @@
+<robot name="tr1">
+
+	<link name="base_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+			<origin rpy="0 0 3.141592" />
+		</visual>
+	</link>
+
+	<link name="wheel1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="1.0"/>
+			<inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/wheel.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="body_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592"/>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/body.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 3.141592"/>
+		</visual>
+	</link>
+
+	<link name="right_arm1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm7_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_arm8_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_gripper1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="right_gripper2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="right_gripper3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="right_gripper4l_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="right_gripper4r_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="right_gripper5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="right_gripper6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</visual>
+	</link>
+
+	<link name="neck_base_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck_base.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</visual>
+	</link>
+
+	<link name="neck_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/neck.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</visual>
+	</link>
+
+	<link name="head_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/head.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 -1.5708 -1.5708"/>
+		</visual>
+	</link>
+
+	<joint name="JointTorsoExtension" type="prismatic">
+		<parent link="base_link"/>
+		<child link="body_link"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1000.0" lower="0" upper="0.150" velocity="0.0001"/>
+		<origin xyz="0 0 0.707"/>
+	</joint>
+
+	<joint name="JointBaseWheelFL" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel1_link"/>
+    <axis xyz="0 1 0"/>
+		<origin rpy="0 0 0.785398" xyz="-0.293310 0.417810 -0.0725"/>
+	</joint>
+
+	<joint name="JointBaseWheelFR" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel2_link"/>
+    <axis xyz="0 1 0"/>
+		<origin rpy="0 0 -0.785398" xyz="0.293310 0.417810 -0.0725"/>
+	</joint>
+
+	<joint name="JointBaseWheelBL" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel3_link"/>
+    <axis xyz="0 1 0"/>
+		<origin rpy="0 0 -2.35619449019" xyz="0.293310 -0.168810 -0.0725"/>
+	</joint>
+
+	<joint name="JointBaseWheelBR" type="continuous">
+		<parent link="base_link"/>
+		<child link="wheel4_link"/>
+    <axis xyz="0 1 0"/>
+		<origin rpy="0 0 2.356194490191" xyz="-0.293310 -0.168810 -0.0725"/>
+	</joint>
+
+	<joint name="body_to_right_arm1" type="fixed">
+		<parent link="body_link"/>
+		<child link="right_arm1_link"/>
+		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.20575"/>
+	</joint>
+
+	<joint name="JointRightShoulderPan" type="revolute">
+		<parent link="right_arm1_link"/>
+		<child link="right_arm2_link"/>
+		<origin xyz="0 0 -0.007"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.2932"/>
+	</joint>
+
+	<joint name="JointRightShoulderTilt" type="revolute">
+		<parent link="right_arm2_link"/>
+		<child link="right_arm3_link"/>
+		<origin xyz="0.139238 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.075"/>
+	</joint>
+
+	<joint name="JointRightUpperArmRoll" type="revolute">
+		<parent link="right_arm3_link"/>
+		<child link="right_arm4_link"/>
+		<origin xyz="0.238827 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.25"/>
+	</joint>
+
+	<joint name="JointRightElbowFlex" type="revolute">
+		<parent link="right_arm4_link"/>
+		<child link="right_arm5_link"/>
+		<origin xyz="0.145 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.1"/>
+	</joint>
+
+	<joint name="JointRightForearmRoll" type="revolute">
+		<parent link="right_arm5_link"/>
+		<child link="right_arm6_link"/>
+		<origin xyz="0.230643 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="1.4661"/>
+	</joint>
+
+	<joint name="JointRightWristFlex" type="revolute">
+		<parent link="right_arm6_link"/>
+		<child link="right_arm7_link"/>
+		<origin xyz="0.165 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.7330"/>
+	</joint>
+
+	<joint name="JointRightWristRoll" type="revolute">
+		<parent link="right_arm7_link"/>
+		<child link="right_arm8_link"/>
+		<origin xyz="0.045311 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="7.5398"/>
+	</joint>
+
+	<joint name="right_arm8_to_right_gripper1" type="fixed">
+		<parent link="right_arm8_link"/>
+		<child link="right_gripper1_link"/>
+		<origin xyz="0.04619 0 0"/>
+	</joint>
+
+	<joint name="JointRightGripper" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="0.5"/>
+	</joint>
+
+	<joint name="right_gripper1_to_right_gripper3" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper3_link"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="right_gripper1_to_right_gripper4l" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper4l_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="right_gripper1_to_right_gripper4r" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper4r_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="right_gripper2_to_right_gripper6" type="revolute">
+		<parent link="right_gripper2_link"/>
+		<child link="right_gripper6_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="right_gripper3_to_right_gripper5" type="revolute">
+		<parent link="right_gripper3_link"/>
+		<child link="right_gripper5_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<link name="left_arm1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm4_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 3.141592 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="-1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm7_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_arm8_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/arm8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_gripper1_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="1.5708 0 0" />
+		</visual>
+	</link>
+
+	<link name="left_gripper2_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="left_gripper3_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="left_gripper4l_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="left_gripper4r_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="left_gripper5_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="left_gripper6_link">
+		<collision>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</collision>
+		<inertial>
+			<mass value="0.005"/>
+			<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+		</inertial>
+		<visual>
+			<geometry>
+        <mesh filename="package://tr1_description/meshes/dae/gripper6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin rpy="3.141592 0 1.5708" />
+		</visual>
+	</link>
+
+	<joint name="body_to_left_arm1" type="fixed">
+		<parent link="body_link"/>
+		<child link="left_arm1_link"/>
+		<origin rpy="0 0 2.87979" xyz="-0.184864 0.034420 0.20575"/>
+	</joint>
+
+	<joint name="JointLeftShoulderPan" type="revolute">
+		<parent link="left_arm1_link"/>
+		<child link="left_arm2_link"/>
+		<origin xyz="0 0 -0.007"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-1.5708" upper="1" velocity="1.5708"/>
+	</joint>
+
+	<joint name="JointLeftShoulderTilt" type="revolute">
+		<parent link="left_arm2_link"/>
+		<child link="left_arm3_link"/>
+		<origin xyz="0.139238 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.1"/>
+	</joint>
+
+	<joint name="JointLeftUpperArmRoll" type="revolute">
+		<parent link="left_arm3_link"/>
+		<child link="left_arm4_link"/>
+		<origin xyz="0.238827 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.25"/>
+	</joint>
+
+	<joint name="JointLeftElbowFlex" type="revolute">
+		<parent link="left_arm4_link"/>
+		<child link="left_arm5_link"/>
+		<origin xyz="0.145 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.1"/>
+	</joint>
+
+	<joint name="JointLeftForearmRoll" type="revolute">
+		<parent link="left_arm5_link"/>
+		<child link="left_arm6_link"/>
+		<origin xyz="0.230643 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="JointLeftWristFlex" type="revolute">
+		<parent link="left_arm6_link"/>
+		<child link="left_arm7_link"/>
+		<origin xyz="0.165 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.7330"/>
+	</joint>
+
+	<joint name="JointLeftWristRoll" type="revolute">
+		<parent link="left_arm7_link"/>
+		<child link="left_arm8_link"/>
+		<origin xyz="0.045311 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="7.5398"/>
+	</joint>
+
+	<joint name="left_arm8_to_left_gripper1" type="fixed">
+		<parent link="left_arm8_link"/>
+		<child link="left_gripper1_link"/>
+		<origin xyz="0.04619 0 0"/>
+	</joint>
+
+	<joint name="JointLeftGripper" type="revolute">
+		<parent link="left_gripper1_link"/>
+		<child link="left_gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="2.0"/>
+	</joint>
+
+	<joint name="left_gripper1_to_left_gripper3" type="revolute">
+		<parent link="left_gripper1_link"/>
+		<child link="left_gripper3_link"/>
+		<mimic joint="JointLeftGripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="left_gripper1_to_left_gripper4l" type="revolute">
+		<parent link="left_gripper1_link"/>
+		<child link="left_gripper4l_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
+		<mimic joint="JointLeftGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="left_gripper1_to_left_gripper4r" type="revolute">
+		<parent link="left_gripper1_link"/>
+		<child link="left_gripper4r_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
+		<mimic joint="JointLeftGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="left_gripper2_to_left_gripper6" type="revolute">
+		<parent link="left_gripper2_link"/>
+		<child link="left_gripper6_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointLeftGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="left_gripper3_to_left_gripper5" type="revolute">
+		<parent link="left_gripper3_link"/>
+		<child link="left_gripper5_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointLeftGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="body_to_neck_base" type="fixed">
+		<parent link="body_link"/>
+		<child link="neck_base_link"/>
+		<origin xyz="0 -0.017 0.365"/>
+	</joint>
+
+	<joint name="neck_base_to_neck" type="revolute">
+		<parent link="neck_base_link"/>
+		<child link="neck_link"/>
+		<origin xyz="0 0 0.035"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+	</joint>
+
+	<joint name="neck_to_head" type="revolute">
+		<parent link="neck_link"/>
+		<child link="head_link"/>
+		<origin xyz="0 0.090789 0.09"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-0.9" upper="0.4" velocity="0.5"/>
+	</joint>
+
+  <!--                GAZEBO RELATED PART                             -->
+
+  <!-- ROS Control plugin for Gazebo -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+    <plugin name="left_gripper3_to_left_gripper5_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper3_to_left_gripper5</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="left_gripper2_to_left_gripper6_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper2_to_left_gripper6</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper4r_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper4r</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper4l_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper4l</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="left_gripper1_to_left_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointLeftGripper</joint>
+        <mimicJoint>left_gripper1_to_left_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper2_to_right_gripper6_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper2_to_right_gripper6</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper3_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper3</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper4l_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper4l</mimicJoint>
+        <multiplier>-1</multiplier>
+    </plugin>
+    <plugin name="right_gripper1_to_right_gripper4r_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper1_to_right_gripper4r</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="right_gripper3_to_right_gripper5_mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>JointRightGripper</joint>
+        <mimicJoint>right_gripper3_to_right_gripper5</mimicJoint>
+        <multiplier>1</multiplier>
+    </plugin>
+  </gazebo>
+
+  <!-- transmission -->
+  <transmission name="neck_to_head_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor1">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="neck_to_head">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="neck_base_to_neck_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor2">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="neck_base_to_neck">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightShoulderPan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor3">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightShoulderPan">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightShoulderTilt_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor4">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightShoulderTilt">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightUpperArmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor5">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightUpperArmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightElbowFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor6">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightElbowFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightForearmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor7">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightForearmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightWristFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor8">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightWristFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightWristRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor9">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightWristRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointRightGripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor10">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointRightGripper">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftShoulderPan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor11">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftShoulderPan">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftShoulderTilt_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor12">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftShoulderTilt">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftUpperArmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor13">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftUpperArmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftElbowFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor14">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftElbowFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftForearmRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor15">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftForearmRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftWristFlex_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor16">
+      <mechanicalReduction>2000</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftWristFlex">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftWristRoll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor17">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftWristRoll">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointLeftGripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor18">
+      <mechanicalReduction>378</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointLeftGripper">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointBaseWheelFR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor19">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelFR">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
+  <transmission name="JointBaseWheelFL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor20">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelFL">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
+  <transmission name="JointBaseWheelBR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor21">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelBR">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointBaseWheelBL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor22">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointBaseWheelBL">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="JointTorsoExtension_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor23">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="JointTorsoExtension">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+</robot>

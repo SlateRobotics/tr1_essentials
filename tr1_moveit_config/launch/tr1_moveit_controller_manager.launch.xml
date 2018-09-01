@@ -1,0 +1,4 @@
+<launch>
+	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager" />
+<rosparam file="$(find tr1_moveit_config)/config/controllers.yaml"/>
+</launch>

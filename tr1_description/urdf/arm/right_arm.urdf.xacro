@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tr1_description)/urdf/arm/arm.macros.xacro" />
+  <xacro:include filename="$(find tr1_description)/urdf/arm/right_arm.gazebo.xacro" />
+	<xacro:include filename="$(find tr1_description)/urdf/arm/right_arm.transmission.xacro" />
+
+	<xacro:arm_link prefix="right" name="arm1" origin_rpy="1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="arm2" origin_rpy="1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="arm3" origin_rpy="1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="arm4" origin_rpy="1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="arm5" origin_rpy="-1.5708 3.141592 0" />
+	<xacro:arm_link prefix="right" name="arm6" origin_rpy="-1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="arm7" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="arm8" origin_rpy="3.141592 0 0" />
+	<xacro:arm_link prefix="right" name="gripper1" origin_rpy="1.5708 0 0" />
+	<xacro:arm_link prefix="right" name="gripper2" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="gripper3" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="gripper4l" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="gripper4r" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="gripper5" origin_rpy="0 0 0" />
+	<xacro:arm_link prefix="right" name="gripper6" origin_rpy="3.141592 0 1.5708" />
+	
+	<joint name="body_to_right_arm1" type="fixed">
+		<parent link="body_link"/>
+		<child link="right_arm1_link"/>
+		<origin rpy="0 0 0.261799" xyz="0.184864 0.034420 0.20575"/>
+	</joint>
+
+	<joint name="JointRightShoulderPan" type="revolute">
+		<parent link="right_arm1_link"/>
+		<child link="right_arm2_link"/>
+		<origin xyz="0 0 -0.007"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-1" upper="1.5708" velocity="0.2932"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightShoulderTilt" type="revolute">
+		<parent link="right_arm2_link"/>
+		<child link="right_arm3_link"/>
+		<origin xyz="0.139238 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.5708" upper="1.5708" velocity="0.075"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightUpperArmRoll" type="revolute">
+		<parent link="right_arm3_link"/>
+		<child link="right_arm4_link"/>
+		<origin xyz="0.238827 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.25"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightElbowFlex" type="revolute">
+		<parent link="right_arm4_link"/>
+		<child link="right_arm5_link"/>
+		<origin xyz="0.145 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.1"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightForearmRoll" type="revolute">
+		<parent link="right_arm5_link"/>
+		<child link="right_arm6_link"/>
+		<origin xyz="0.230643 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="1.4661"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightWristFlex" type="revolute">
+		<parent link="right_arm6_link"/>
+		<child link="right_arm7_link"/>
+		<origin xyz="0.165 0 0"/>
+    <axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-1.75" upper="1.75" velocity="0.7330"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightWristRoll" type="revolute">
+		<parent link="right_arm7_link"/>
+		<child link="right_arm8_link"/>
+		<origin xyz="0.045311 0 0"/>
+    <axis xyz="1 0 0"/>
+		<limit effort="1.0" lower="-2" upper="2" velocity="7.5398"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="right_arm8_to_right_gripper1" type="fixed">
+		<parent link="right_arm8_link"/>
+		<child link="right_gripper1_link"/>
+		<origin xyz="0.04619 0 0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="JointRightGripper" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper2_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.024 -0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="0" upper="1.5708" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="rg1_to_rg3" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper3_link"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+		<origin rpy="0 0 1.5708" xyz="0.024 0.014 0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="rg1_to_rg4l" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper4l_link"/>
+		<origin rpy="0 0 -1.5708" xyz="0.044 0.007 0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="rg1_to_rg4r" type="revolute">
+		<parent link="right_gripper1_link"/>
+		<child link="right_gripper4r_link"/>
+		<origin rpy="0 0 1.5708" xyz="0.044 -0.007 0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="rg2_to_rg6" type="revolute">
+		<parent link="right_gripper2_link"/>
+		<child link="right_gripper6_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointRightGripper" multiplier="-1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+	<joint name="rg3_to_rg5" type="revolute">
+		<parent link="right_gripper3_link"/>
+		<child link="right_gripper5_link"/>
+		<origin xyz="0.040 0 0"/>
+		<mimic joint="JointRightGripper" multiplier="1" offset="0"/>
+    <axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-3.1415" upper="3.1415" velocity="0.5"/>
+    <dynamics damping="0.1" friction="0.1"/>
+	</joint>
+
+</robot>
+
+

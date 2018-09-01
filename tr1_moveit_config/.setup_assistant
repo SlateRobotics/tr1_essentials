@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: tr1_description
+    relative_path: robots/tr1.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/tr1.srdf
+  CONFIG:
+    author_name: Zachary Allen
+    author_email: zach@slaterobots.com
+    generated_timestamp: 1535646801

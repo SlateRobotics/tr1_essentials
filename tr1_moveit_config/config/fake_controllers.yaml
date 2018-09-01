@@ -1,0 +1,25 @@
+controller_list:
+  - name: fake_right_arm_controller
+    joints:
+      - JointRightShoulderPan
+      - JointRightShoulderTilt
+      - JointRightUpperArmRoll
+      - JointRightElbowFlex
+      - JointRightForearmRoll
+      - JointRightWristFlex
+      - JointRightWristRoll
+  - name: fake_left_arm_controller
+    joints:
+      - JointLeftShoulderPan
+      - JointLeftShoulderTilt
+      - JointLeftUpperArmRoll
+      - JointLeftElbowFlex
+      - JointLeftForearmRoll
+      - JointLeftWristFlex
+      - JointLeftWristRoll
+  - name: fake_right_gripper_controller
+    joints:
+      - JointRightGripper
+  - name: fake_left_gripper_controller
+    joints:
+      - JointLeftGripper

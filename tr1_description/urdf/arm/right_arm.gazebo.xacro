@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tr1_description)/urdf/arm/arm.macros.xacro" />
+
+	<xacro:mimic_joint parent="JointRightGripper" joint="rg1_to_rg3" multiplier="-1"/>
+	<xacro:mimic_joint parent="JointRightGripper" joint="rg1_to_rg4l" multiplier="-1"/>
+	<xacro:mimic_joint parent="JointRightGripper" joint="rg1_to_rg4r" multiplier="1"/>
+	<xacro:mimic_joint parent="JointRightGripper" joint="rg2_to_rg6" multiplier="-1"/>
+	<xacro:mimic_joint parent="JointRightGripper" joint="rg3_to_rg5" multiplier="1"/>
+
+</robot>
+
+

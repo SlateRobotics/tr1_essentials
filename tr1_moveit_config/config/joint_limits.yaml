@@ -1,0 +1,134 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  JointLeftElbowFlex:
+    has_velocity_limits: true
+    max_velocity: 0.1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftForearmRoll:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftGripper:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftShoulderPan:
+    has_velocity_limits: true
+    max_velocity: 1.5708
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftShoulderTilt:
+    has_velocity_limits: true
+    max_velocity: 0.1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftUpperArmRoll:
+    has_velocity_limits: true
+    max_velocity: 0.25
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftWristFlex:
+    has_velocity_limits: true
+    max_velocity: 0.733
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointLeftWristRoll:
+    has_velocity_limits: true
+    max_velocity: 7.5398
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightElbowFlex:
+    has_velocity_limits: true
+    max_velocity: 0.1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightForearmRoll:
+    has_velocity_limits: true
+    max_velocity: 1.4661
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightGripper:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightShoulderPan:
+    has_velocity_limits: true
+    max_velocity: 0.2932
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightShoulderTilt:
+    has_velocity_limits: true
+    max_velocity: 0.075
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightUpperArmRoll:
+    has_velocity_limits: true
+    max_velocity: 0.25
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightWristFlex:
+    has_velocity_limits: true
+    max_velocity: 0.733
+    has_acceleration_limits: false
+    max_acceleration: 0
+  JointRightWristRoll:
+    has_velocity_limits: true
+    max_velocity: 7.5398
+    has_acceleration_limits: false
+    max_acceleration: 0
+  lg1_to_lg3:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  lg1_to_lg4l:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  lg1_to_lg4r:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  lg2_to_lg6:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  lg3_to_lg5:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rg1_to_rg3:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rg1_to_rg4l:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rg1_to_rg4r:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rg2_to_rg6:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rg3_to_rg5:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0

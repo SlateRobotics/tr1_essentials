@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- Disable shadows for now since they make the interiors
+         look awful -->
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <!-- Position the user camera -->
+    <gui>
+      <camera name="user_camera">
+        <pose>16 -30 17 0 0.5235 2.09</pose>
+      </camera>
+    </gui>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+  </world>
+</sdf>

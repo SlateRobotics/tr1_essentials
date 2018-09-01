@@ -1,0 +1,9 @@
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find tr1_description)/robots/tr1.urdf.xacro" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find tr1_description)/urdf.rviz" required="true" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="true"/> 
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node>
+</launch>

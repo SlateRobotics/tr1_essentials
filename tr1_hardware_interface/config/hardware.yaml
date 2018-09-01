@@ -1,0 +1,27 @@
+tr1:
+  hardware_interface:
+     loop_hz: 10 # hz
+     joints:
+       - JointRightShoulderPan
+       - JointRightShoulderTilt
+       - JointRightUpperArmRoll
+       - JointRightElbowFlex
+       - JointRightForearmRoll
+       - JointRightWristFlex
+       - JointRightWristRoll
+       - JointRightGripper
+       - JointLeftShoulderPan
+       - JointLeftShoulderTilt
+       - JointLeftUpperArmRoll
+       - JointLeftElbowFlex
+       - JointLeftForearmRoll
+       - JointLeftWristFlex
+       - JointLeftWristRoll
+       - JointLeftGripper
+       - JointBaseWheelFL
+       - JointBaseWheelFR
+       - JointBaseWheelBL
+       - JointBaseWheelBR
+       - JointHeadPan
+       - JointHeadTilt
+       - JointTorsoExtension

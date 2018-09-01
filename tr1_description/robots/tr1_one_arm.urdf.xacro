@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tr1">
+
+	<xacro:include filename="$(find tr1_description)/urdf/base/base.urdf.xacro"/>
+	<xacro:include filename="$(find tr1_description)/urdf/body/body.urdf.xacro"/>
+	<xacro:include filename="$(find tr1_description)/urdf/head/head.urdf.xacro"/>
+	<xacro:include filename="$(find tr1_description)/urdf/arm/right_arm.urdf.xacro"/>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+	</gazebo>
+
+</robot>
+
+

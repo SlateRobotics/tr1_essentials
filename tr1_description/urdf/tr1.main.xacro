@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tr1_description)/urdf/base/base.gazebo.xacro" />
+	<xacro:include filename="$(find tr1_description)/urdf/base/base.transmission.xacro" />
+
+
+
+</robot>
+
+

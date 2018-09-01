@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="arm_link" params="prefix name origin_rpy">
+		<link name="${prefix}_${name}_link">
+			<collision>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/${name}.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${origin_rpy}" />
+			</collision>
+			<inertial>
+				<mass value="0.005"/>
+				<inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0" />
+			</inertial>
+			<visual>
+				<geometry>
+		      <mesh filename="package://tr1_description/meshes/dae/${name}.dae" scale="0.001 0.001 0.001"/>
+				</geometry>
+				<origin rpy="${origin_rpy}" />
+			</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:macro name="arm_trans" params="joint_name">
+		<transmission name="${joint_name}_trans">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <actuator name="${joint_name}_actuator">
+		    <mechanicalReduction>2000</mechanicalReduction>
+		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+		  </actuator>
+		  <joint name="${joint_name}">
+		    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		  </joint>
+		</transmission>
+	</xacro:macro>
+
+	<xacro:property name="mimic_plugin" value="libroboticsgroup_gazebo_mimic_joint_plugin.so" />
+	<xacro:macro name="mimic_joint" params="parent joint multiplier">
+		<gazebo>
+			<plugin name="${joint}_mimic_joint_plugin" filename="${mimic_plugin}">
+					<joint>${parent}</joint>
+					<mimicJoint>${joint}</mimicJoint>
+					<multiplier>${multiplier}</multiplier>
+			</plugin>
+		</gazebo>
+	</xacro:macro>
+
+</robot>
+
+

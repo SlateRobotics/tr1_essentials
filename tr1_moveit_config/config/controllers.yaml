@@ -1,0 +1,25 @@
+controller_list:
+  - name: /tr1/controller/trajectory/RightPosition
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - JointRightShoulderPan
+      - JointRightShoulderTilt
+      - JointRightUpperArmRoll
+      - JointRightElbowFlex
+      - JointRightForearmRoll
+      - JointRightWristFlex
+      - JointRightWristRoll
+  - name: /tr1/controller/trajectory/LeftPosition
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - JointLeftShoulderPan
+      - JointLeftShoulderTilt
+      - JointLeftUpperArmRoll
+      - JointLeftElbowFlex
+      - JointLeftForearmRoll
+      - JointLeftWristFlex
+      - JointLeftWristRoll

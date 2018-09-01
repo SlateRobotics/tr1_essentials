@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find tr1_description)/urdf/arm/arm.macros.xacro" />
+
+	<xacro:arm_trans joint_name="JointRightShoulderPan" />
+	<xacro:arm_trans joint_name="JointRightShoulderTilt" />
+	<xacro:arm_trans joint_name="JointRightUpperArmRoll" />
+	<xacro:arm_trans joint_name="JointRightElbowFlex" />
+	<xacro:arm_trans joint_name="JointRightForearmRoll" />
+	<xacro:arm_trans joint_name="JointRightWristFlex" />
+	<xacro:arm_trans joint_name="JointRightWristRoll" />
+	<xacro:arm_trans joint_name="JointRightGripper" />
+
+</robot>
+
+

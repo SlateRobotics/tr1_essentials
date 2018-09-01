@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tr1">
+
+	<!-- Include the parameters xacro file -->
+	<xacro:include filename="$(find tr1_description)/urdf/tr1.parameters.xacro"/>
+
+	<!-- Include macros for creating all links and joints -->
+	<xacro:include filename="$(find tr1_description>/urdf/tr1.macros.xacro"/>
+
+	<!-- Camera in separate file for readability -->
+	<xacro:include filename="$(find tr1_description)/urdf/tr1.camera.xacro"/>
+
+	<!-- Include gazebo elements -->
+	<xacro:include filename="$(find tr1_description)/urdf/tr1.gazebo.xacro"/>
+
+	<!-- Create a spawn link so that the robot can be away from the origin -->
+	<link name="spawn_link"/>
+
+	<!-- Create the robot chassis -->
+	<link name="robot_base">
+
+		<!-- Create the base visual -->
+		<visual>
+			<mesh filename="package://tr1_description/meshes/base.dae" scale="0.1 0.1 0.1"/>
