@@ -116,11 +116,11 @@ tr1:
         pid: {p: 1.0, i: 0.0, d: 0.0}
       JointHeadTilt:
         type: effort_controllers/JointPositionController
-        joint: neck_to_head
+        joint: JointHeadTilt
         pid: {p: 5.0, i: 0.0, d: 1.0}
       JointHeadPan:
         type: effort_controllers/JointPositionController
-        joint: neck_base_to_neck
+        joint: JointHeadPan
         pid: {p: 5.0, i: 0.0, d: 1.0}
     effort:
       JointTorsoExtension:

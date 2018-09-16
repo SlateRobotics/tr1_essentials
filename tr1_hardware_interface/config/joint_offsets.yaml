@@ -1,24 +1,26 @@
 tr1:
   joint_offsets:
-    JointBaseWheelBL: -395.69954811985457
-    JointBaseWheelBR: -0.030679615757714843
-    JointBaseWheelFL: -395.8345384291884
-    JointBaseWheelFR: -0.01227184630308594
-    JointLeftElbowFlex: 2.791845033952051
-    JointLeftForearmRoll: -2.97592272849834
+    JointBaseWheelBL: -0.0797670009700586
+    JointBaseWheelBR: -395.53387819476285
+    JointBaseWheelFL: -0.0
+    JointBaseWheelFR: -0.0
+    JointHeadPan: -0.19634954084937503
+    JointHeadTilt: -1.4235341711579688
+    JointLeftElbowFlex: -1.6382914814619725
+    JointLeftForearmRoll: -1.1024208595605536
     JointLeftGripper: -0.0
-    JointLeftShoulderPan: -1.568751019077819
-    JointLeftShoulderTilt: -2.822524649709765
-    JointLeftUpperArmRoll: 0.024543692606171952
-    JointLeftWristFlex: 1.1965050145508789
+    JointLeftShoulderPan: -0.07363107781851563
+    JointLeftShoulderTilt: 3.104777114680742
+    JointLeftUpperArmRoll: 2.4339161834453775
+    JointLeftWristFlex: 2.1802980265149356
     JointLeftWristRoll: -0.0
-    JointRightElbowFlex: -2.2518837966162697
-    JointRightForearmRoll: -1.329450016167643
+    JointRightElbowFlex: 1.2885438618240235
+    JointRightForearmRoll: -0.15339807878857423
     JointRightGripper: -0.0
-    JointRightShoulderPan: -0.02863430804053385
-    JointRightShoulderTilt: 1.0124273200045897
-    JointRightUpperArmRoll: 1.0737865515200191
-    JointRightWristFlex: 2.4748223377889977
+    JointRightShoulderPan: -1.1167380135808203
+    JointRightShoulderTilt: -0.3497476196379492
+    JointRightUpperArmRoll: 0.8590292412160156
+    JointRightWristFlex: -2.2396119503131837
     JointRightWristRoll: -0.0
     JointTorsoExtension: -0.0
     base_to_body: -0.0
@@ -26,14 +28,12 @@ tr1:
     base_to_wheel2: -0.0
     base_to_wheel3: -0.0
     base_to_wheel4: -0.0
-    JointHeadPan: -1.5217089415826563
-    JointHeadTilt: 0.049087385212343904
   joint_read_ratio:
-    JointLeftElbowFlex: 0.944444444
+    JointLeftElbowFlex: -0.944444444
     JointLeftForearmRoll: 1.076923077
     JointLeftGripper: 1.0
     JointLeftShoulderPan: 1.0
-    JointLeftShoulderTilt: 1.0
+    JointLeftShoulderTilt: -1.0
     JointLeftUpperArmRoll: 1.076923077
     JointLeftWristFlex: 0.923076923
     JointLeftWristRoll: 1.0
@@ -43,5 +43,6 @@ tr1:
     JointRightShoulderPan: 1.0
     JointRightShoulderTilt: 1.0
     JointRightUpperArmRoll: 1.076923077
-    JointRightWristFlex: 0.923076923
+    JointRightWristFlex: -0.923076923
     JointRightWristRoll: 1.0
+    JointTorsoExtension: 0.00017896

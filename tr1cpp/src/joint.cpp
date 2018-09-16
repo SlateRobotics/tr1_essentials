@@ -70,10 +70,17 @@ namespace tr1cpp
 
 	double Joint::readAngle()
 	{
-		if (_actuatorType == ACTUATOR_TYPE_MOTOR) {
+		if (name == "JointTorsoExtension") {
 			uint16_t position;
-
-			I2C i2cSlave = I2C(1, _getSlaveAddress());
+			I2C i2cSlave = I2C(0, _getSlaveAddress());
+			uint8_t result = i2cSlave.readBytes(_motorId, 4, position);
+			if (result == 1) {
+				double p = position * readRatio;
+				return p;
+			}
+		} else if (_actuatorType == ACTUATOR_TYPE_MOTOR) {
+			uint16_t position;
+			I2C i2cSlave = I2C(0, _getSlaveAddress());
 			uint8_t result = i2cSlave.readBytes(_motorId, 4, position);
 			if (result == 1) {
 				double angle = (position / sensorResolution * TAU);
@@ -108,7 +115,7 @@ namespace tr1cpp
 			uint8_t data[4];
 			data[3] = duration;
 			_prepareI2CWrite(data, effort);
-			I2C i2cSlave = I2C(1, _getSlaveAddress());
+			I2C i2cSlave = I2C(0, _getSlaveAddress());
 			uint8_t result = i2cSlave.writeData(0x00, data);
 			//ROS_INFO("Result: [%i]; effort: [%f]; bytes: %i, %i, %i, %i", result, effort, data[0], data[1], data[2], data[3]);
 		}
@@ -118,7 +125,7 @@ namespace tr1cpp
 			{
 				uint8_t data[4];
 				_prepareI2CWrite(data, effort);
-				I2C i2cSlave = I2C(1, _getSlaveAddress());
+				I2C i2cSlave = I2C(0, _getSlaveAddress());
 				uint8_t result = i2cSlave.writeData(0x00, data);
 				//ROS_INFO("Result: [%i]; effort: [%f]; bytes: %i, %i, %i, %i", result, effort, data[0], data[1], data[2], data[3]);
 			}
@@ -179,11 +186,11 @@ namespace tr1cpp
 		}
 		else if (_actuatorType == ACTUATOR_TYPE_SERVO)
 		{
-			if (name != "JointRightGripper") {
+			/*if (name != "JointRightGripper") {
 				effort = (effort + 1.5708) / 3.1415;
 				if (effort > 1.0) effort = 1.0;
 				if (effort < 0.0) effort = 0.0;
-			}
+			}*/
 
 			double magnitude = effort * 100.0;
 			uint8_t servoValue = floor(_minServoValue + ((_maxServoValue - _minServoValue) * (magnitude / 100.0)));

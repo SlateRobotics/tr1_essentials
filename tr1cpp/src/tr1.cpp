@@ -27,10 +27,10 @@ namespace tr1cpp
 		base.joints[4].setMotorId(13);
 
 		//head
-		head.joints[0].name = "neck_base_to_neck";
+		head.joints[0].name = "JointHeadTilt";
 		head.joints[0].setMotorId(14);
 		head.joints[0].sensorResolution = 128;
-		head.joints[1].name = "neck_to_head";
+		head.joints[1].name = "JointHeadPan";
 		head.joints[1].setMotorId(15);
 		head.joints[1].sensorResolution = 128;
 
@@ -87,7 +87,7 @@ namespace tr1cpp
 		armLeft.joints[7].setActuatorType(ACTUATOR_TYPE_SERVO);
 
 		armLeft.joints[6].setServoLimits(0, 180);
-		armLeft.joints[7].setServoLimits(20, 120);
+		armLeft.joints[7].setServoLimits(0, 180);
 	}
 
 	TR1::~TR1()
