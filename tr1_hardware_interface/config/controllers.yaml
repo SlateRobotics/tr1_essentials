@@ -117,11 +117,11 @@ tr1:
       JointHeadTilt:
         type: effort_controllers/JointPositionController
         joint: JointHeadTilt
-        pid: {p: 5.0, i: 0.0, d: 1.0}
+        pid: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
       JointHeadPan:
         type: effort_controllers/JointPositionController
         joint: JointHeadPan
-        pid: {p: 5.0, i: 0.0, d: 1.0}
+        pid: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
     effort:
       JointTorsoExtension:
         type: effort_controllers/JointEffortController

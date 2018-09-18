@@ -22,6 +22,8 @@
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
 		args="
 			/tr1/controller/state
+			/tr1/controller/position/JointHeadPan
+			/tr1/controller/position/JointHeadTilt
 			/tr1/controller/position/JointRightShoulderPan
 			/tr1/controller/position/JointRightShoulderTilt
 			/tr1/controller/position/JointRightUpperArmRoll

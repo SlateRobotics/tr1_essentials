@@ -27,10 +27,10 @@ namespace tr1cpp
 		base.joints[4].setMotorId(13);
 
 		//head
-		head.joints[0].name = "JointHeadTilt";
+		head.joints[0].name = "JointHeadPan";
 		head.joints[0].setMotorId(14);
 		head.joints[0].sensorResolution = 128;
-		head.joints[1].name = "JointHeadPan";
+		head.joints[1].name = "JointHeadTilt";
 		head.joints[1].setMotorId(15);
 		head.joints[1].sensorResolution = 128;
 
