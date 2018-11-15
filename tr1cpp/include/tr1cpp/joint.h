@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <tr1cpp/i2c.h>
+#include <tr1cpp/serial.h>
 
 #define BASE_SLAVE_ADDRESS 0x70
 #define ARM_RIGHT_SLAVE_ADDRESS 0x71
@@ -24,12 +25,15 @@ namespace tr1cpp
 			uint8_t _minServoValue = 0;
 			uint8_t _maxServoValue = 75;
 			double _previousEffort;
+			double _previousRead;
+			int _noiseCount;
 			double _filterAngle(double angle);
 			int _angleReads = 0;
 			static const int _filterPrevious = 3;
 			double _previousAngles[_filterPrevious];
 			void _prepareI2CWrite(uint8_t result[4], double effort);
 			void _prepareI2CRead(uint8_t result[4]);
+			SerialPort *_serialPort;
 		public:
 			std::string name;
 			Joint();

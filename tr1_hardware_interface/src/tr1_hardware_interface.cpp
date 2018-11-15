@@ -149,7 +149,7 @@ namespace tr1_hardware_interface
 			//if (joint_effort_command_[i] < -1) joint_effort_command_[i] = -1;
 
 			double effort = joint_effort_command_[i];
-			uint8_t duration = 15;
+			uint8_t duration = 30;
 
 			if (joint.getActuatorType() == 1) { // servo
 				double previousEffort = joint.getPreviousEffort();

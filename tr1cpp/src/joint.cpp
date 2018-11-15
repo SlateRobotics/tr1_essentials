@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include "ros/ros.h"
 #include <tr1cpp/joint.h>
-#include <tr1cpp/i2c.h>
+#include <tr1cpp/serial.h>
 
 #define PI 3.14159265359
 #define TAU 6.28318530718
@@ -12,7 +12,8 @@ namespace tr1cpp
 {
 	Joint::Joint()
 	{
-		
+		char serialName[13] = "/dev/ttyACM0";
+		this->_serialPort = new SerialPort(serialName);
 	}
 
 	Joint::Joint(uint8_t motorId)
@@ -71,28 +72,77 @@ namespace tr1cpp
 	double Joint::readAngle()
 	{
 		if (name == "JointTorsoExtension") {
-			uint16_t position;
+/*			uint16_t position;
 			I2C i2cSlave = I2C(0, _getSlaveAddress());
 			uint8_t result = i2cSlave.readBytes(_motorId, 4, position);
 			if (result == 1) {
 				double p = position * readRatio;
 				return p;
-			}
+			}*/
+			return 0;
 		} else if (_actuatorType == ACTUATOR_TYPE_MOTOR) {
-			uint16_t position;
-			I2C i2cSlave = I2C(0, _getSlaveAddress());
-			uint8_t result = i2cSlave.readBytes(_motorId, 4, position);
-			if (result == 1) {
-				double angle = (position / sensorResolution * TAU);
-				angle = _filterAngle(angle);
-				angle += angleOffset;
-				if (angle > PI) angle -= TAU;
-				if (angle < -PI) angle += TAU;
-				angle *= readRatio;
-				return angle;
+			if (_serialPort->isConnected()) {
+				int res_size = 32;
+				char req[255];
+				char res[res_size];
+				snprintf(req, 255, "1 0x%x %i ;", _getSlaveAddress(), _motorId);
+				bool success = _serialPort->readSerialPort(req, res);
+				if (!success) {
+					ROS_WARN("Could not write to serial port");
+				} else {
+					int motorId;
+					int position;
+					int variableIndex = 0;
+					int bufferIndex = 0;
+					char buf[res_size];
+					for (int i = 0; i < res_size; i++) {
+						char c = res[i];
+						if (c == ' ') {
+							buf[bufferIndex + 1] = '\0';
+							if (variableIndex == 0) {
+								// i2c address, not needed
+							} else if (variableIndex == 1) {
+								motorId = atoi(buf);
+							} else if (variableIndex == 2) {
+								position = atoi(buf);
+							}
+							
+							variableIndex++;
+							bufferIndex = 0;
+							memset(buf, 0, res_size);
+						} else if (c == ';') {
+							break;
+						} else {
+							buf[bufferIndex] = c;
+							bufferIndex++;
+						}
+					}
+					
+					if (motorId == this->_motorId) {
+						double angle = (position / sensorResolution * TAU);
+						angle = _filterAngle(angle);
+						angle += angleOffset;
+						if (angle > PI) angle -= TAU;
+						if (angle < -PI) angle += TAU;
+						angle *= readRatio;
+
+						// probably data noise, skip and return previous read
+						if (abs(angle - this->_previousRead) > PI / 4.0 && this->_noiseCount < 3) {
+							this->_noiseCount++;
+							return this->_previousRead;
+						}
+
+						this->_noiseCount = 0;
+						this->_previousRead = angle;
+						return angle;
+					} else {
+						return this->_previousRead;
+					}
+				}
 			} else {
-				//throw std::runtime_error("I2C Read Error during joint position read. Exiting for safety.");
+				ROS_WARN("Serial port is not connected");
 			}
+			return 0;
 		}
 		else if (_actuatorType == ACTUATOR_TYPE_SERVO)
 		{
@@ -104,7 +154,7 @@ namespace tr1cpp
 		}
 	}
 
-	void Joint::actuate(double effort, uint8_t duration = 15)
+	void Joint::actuate(double effort, uint8_t duration = 30)
 	{
 		if (_actuatorType == ACTUATOR_TYPE_MOTOR)
 		{
@@ -114,24 +164,42 @@ namespace tr1cpp
 
 			uint8_t data[4];
 			data[3] = duration;
-			_prepareI2CWrite(data, effort);
-			I2C i2cSlave = I2C(0, _getSlaveAddress());
-			uint8_t result = i2cSlave.writeData(0x00, data);
-			//ROS_INFO("Result: [%i]; effort: [%f]; bytes: %i, %i, %i, %i", result, effort, data[0], data[1], data[2], data[3]);
+			if (_serialPort->isConnected()) {
+				if (effort > 1.0) effort = 1.0;
+				if (effort < -1.0) effort = -1.0;
+				uint8_t speed = floor(abs(effort * 100));
+				uint8_t direction = (effort > 0);
+
+				char data[255];
+				snprintf(data, 255, "0 0x%x %i %i %i %i ;", _getSlaveAddress(), _motorId, speed, direction, duration);
+				bool success = _serialPort->writeSerialPort(data);
+				if (!success) {
+					ROS_WARN("Could not write to serial port");
+				}
+			} else {
+				ROS_WARN("Serial port is not connected");
+			}
 		}
 		else if (_actuatorType == ACTUATOR_TYPE_SERVO)
 		{
-			if (effort != _previousEffort)
-			{
-				uint8_t data[4];
-				_prepareI2CWrite(data, effort);
-				I2C i2cSlave = I2C(0, _getSlaveAddress());
-				uint8_t result = i2cSlave.writeData(0x00, data);
-				//ROS_INFO("Result: [%i]; effort: [%f]; bytes: %i, %i, %i, %i", result, effort, data[0], data[1], data[2], data[3]);
+			if (floor(effort * 100.0) != floor(this->_previousEffort * 100.0)) {
+				if (_serialPort->isConnected()) {
+					double magnitude = effort * 100.0;
+					uint8_t servoValue = floor(_minServoValue + ((_maxServoValue - _minServoValue) * (magnitude / 100.0)));
+
+					char data[255];
+					snprintf(data, 255, "0 0x%x %i %i 0 0 ;", _getSlaveAddress(), _motorId, servoValue);
+					bool success = _serialPort->writeSerialPort(data);
+					if (!success) {
+						ROS_WARN("Could not write to serial port");
+					}
+				} else {
+					ROS_WARN("Serial port is not connected");
+				}
 			}
 		}
 
-		_previousEffort = effort;
+		this->_previousEffort = effort;
 	}
 
 	uint8_t Joint::_getSlaveAddress()
